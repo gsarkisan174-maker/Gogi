@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Registration</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: black;
+                margin-top: 10%;
+                font-family: sans-serif;
+                margin-left: 38%;
+            }
+            div{
+                
+                text-align: center;
+                background-color: white;
+                width: 350px;
+                border-radius: 15px;
+                height: 425px;
+            }
+            button{
+                height: 50px;
+                border-radius: 23px;
+                width: 70px;
+                cursor: pointer;
+            }
+            input{
+                height: 30px;
+                border-radius: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <br><br>
+            <h1>Registration</h1><br>
+            <input type="text" id="input_name" placeholder="Name"><br><br>
+            <input type="text" id="input_surname" placeholder="Surname"><br><br>
+            <input type="password" id="input_password" placeholder="Password">
+            <p>Have an account? <a href="log.html">Login</a></p>
+            <br>
+            <button id="btn">Register</button><br>
+        
+        </div>
+
+        <script>
+            let btn = document.getElementById("btn");
+            let input_name = document.getElementById("input_name");
+            let input_surname = document.getElementById("input_surname");
+            let input_password = document.getElementById("input_password");
+            let user;
+
+            btn.addEventListener("click", function(){
+                if (input_name.value.trim() === "" || input_surname.value.trim() === "" || !isNaN(input_name.value) || !isNaN(input_surname.value) || input_password.value.trim() === "" || isNaN(input_password.value)){
+                    alert("Fields entered incorrectly");
+                }
+                else{
+                    user = {
+                        name: input_name.value,
+                        surname: input_surname.value,
+                        passowrd: input_password.value
+                    };
+
+                    alert("You have successfully registered");
+                    localStorage.setItem("user", JSON.stringify(user));
+                }
+            });
+        </script>
+    </body>
+</html>

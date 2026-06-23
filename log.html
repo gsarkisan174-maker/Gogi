@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <style>
+            body{
+                text-align: center;
+                background-color: black;
+                margin-top: 10%;
+                font-family: sans-serif;
+                margin-left: 38%;
+            }
+            div{
+                
+                text-align: center;
+                background-color: white;
+                width: 350px;
+                border-radius: 15px;
+                height: 400px;
+            }
+            button{
+                height: 50px;
+                border-radius: 23px;
+                width: 70px;
+                cursor: pointer;
+            }
+            input{
+                height: 30px;
+                border-radius: 10px;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <br><br>
+           <h1>Login</h1><br>
+           <input type="password" id="input_passwordLog" placeholder="Password">
+           <p>No account? <a href="registr.html">Register</a></p> 
+            <br>
+           <button id="btnLog">Login</button>
+        </div>
+
+        <script>
+            let btnLog = document.getElementById("btnLog");
+            let input_passwordLog = document.getElementById("input_passwordLog");
+            
+            btnLog.addEventListener("click", function(){
+                if (input_password.value.trim() === "" || isNaN(input_password.value)){
+                    alert("Field enetered incorrectly");
+                }
+                else{
+                    localStorage.getItem("user");
+                    if (user.password === input_passwordLog){
+                        alert("You login your account");
+                    }
+                }
+            });
+        </script>
+    </body>
+</html>
